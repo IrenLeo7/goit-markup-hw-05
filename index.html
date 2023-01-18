@@ -21,7 +21,7 @@
                 <a class="logo" href="WebStudio">Web<span class="logo-name">Studio</span></a>
                 <ul class="list main-nav nav-list">
                     <li class="more">
-                        <a class="nav current link" href="">Студія</a>
+                        <a class="nav link current " href="">Студія</a>
                     </li>
                     <li class="more">
                         <a class="nav link" href="./portfolio.html">Портфоліо</a>
@@ -55,7 +55,7 @@
         <section class="hero section">
             <div class="conteiner">
                 <h1 class="slogan">Ефективні рішення для <br> вашого бізнесу</h1>
-                <button type="button" class="button" >Замовити послугу</button>
+                <button data-modal-open type="button" class="button" >Замовити послугу</button>
             </div>
         </section>
 
@@ -100,21 +100,24 @@
                 <ul class="list features-text">
                     <li class="item"> 
                         <img src="./img/img.jpg" alt="десктопні додатки"
-                        width="370"
-                        height="294"
+                            width="370"
+                            height="294"
                         > 
+                        <p class="item-features-text">Десктопні додатки</p>
                     </li>
                     <li class="item"> 
                         <img src="./img/img-2.jpg" alt="мобільні додатки"
                         width="370"
                         height="294"
-                        > 
+                        >
+                        <p class="item-features-text">Мобільні додатки</p> 
                     </li>
                     <li class="item"> 
                         <img src="./img/img-3.jpg" alt="дизайнерські рішення"
                         width="370"
                         height="294"
                         > 
+                        <p class="item-features-text">Дизайнерські рішення</p>
                     </li>
                 </ul>
             </div>
@@ -415,5 +418,13 @@
         </div>
 
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button data-modal-close>X</button>
+        </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
+
 </body>
 </html> 

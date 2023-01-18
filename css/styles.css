@@ -105,12 +105,23 @@ img {
 }
 
 .nav {
+    position: relative;
     font-weight: 500;
     font-size: 14px;
     line-height: 1,14;
     letter-spacing: 0.02em;
 
     color: var(--main-text-color);
+}
+.nav.current::after {
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    bottom: -1px;
+    background-color: var(--brand-color);
 }
 
 
@@ -260,7 +271,23 @@ img {
 .item:last-child {
     margin-right: 0px;
 }
+.item {
+    position: relative;
+}
 
+.item::before {
+    display: inline-block;
+    position: absolute;
+    content: "";
+    width: 370px;
+    height: 70px;
+    bottom: 0px;
+    background-color: rgba(47, 48, 58, 0.8);
+}
+.item-features-text {
+    position: relative;
+
+}
 .specifics {
     font-weight: 700;
     font-size: 14px;
@@ -336,9 +363,6 @@ background-color: #F5F4FA;
     letter-spacing: 0.03em;
     color: var(--text-color);
     margin-bottom: 16px;
-}
-.about-project {
-    width: 370px;
 }
 
 .icon-sprite {
@@ -530,6 +554,7 @@ color: #FFFFFF;
 }
 
 .item-project {
+    position: relative;
     width: 370px;
     margin-right: 30px;
     margin-bottom: 30px;
@@ -549,6 +574,26 @@ color: #FFFFFF;
 
 .card-content {
     padding: 20px 24px;
+
+}
+.about-project {
+    position: absolute;
+    display: none;
+
+    width: 100%;
+    top: 100%;
+    left: 0;
+    padding: 63px 24px;
+    transform: translateY(100%);
+}
+
+.item-project:hover .about-project {
+display: block;
+transform: translateY(0);
+
+}
+.item-project:hover .about-project{
+    background-color: rgba(33, 150, 243, 0.9);
 }
 
 .item-project:nth-child(3n) {
@@ -567,4 +612,31 @@ margin-bottom: 0px;
     color: var(--text-color);
 }
 
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
 
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal {
+    position:absolute;
+    top: 50% ;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 530px;
+    height: 580px;
+
+    background-color: #ffffff;
+
+}
